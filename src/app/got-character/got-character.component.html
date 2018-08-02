@@ -1,0 +1,15 @@
+<p>
+  got-character works!
+</p>
+<img [src]="imageurlChild" />
+<ul class="list-group">
+<li class="list-group-item">{{gotCharacter[0]}}</li>
+<li class="list-group-item">{{gotCharacter[1]}}</li>
+<li class="list-group-item">{{gotCharacter[2]}}</li>
+</ul>
+<button type="button" class="btn btn-primary" (click) = "startSwitch()">Start</button>
+<button type="button" class="btn btn-danger" (click) = "stopSwitch()" [disabled]="activateSwitch">Stop</button>
+<div>
+  binging the data two way using ng model to make it work forms module has to be imported in app module.
+<input type="text" [(ngModel)]="twoWay" [value]="twoWay">{{twoWay}}
+</div>
