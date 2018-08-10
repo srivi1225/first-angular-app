@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule } from '@angular/router' //imported to support routing
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component'
 
+//these changes are required for routing
 const ROUTES:Routes = [
   {path:'about', component:AboutComponent},
   {path:'blog', component:BlogComponent},
@@ -32,7 +33,7 @@ const ROUTES:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES) //this has to be added for routing
   ],
   providers: [],
   bootstrap: [AppComponent]
