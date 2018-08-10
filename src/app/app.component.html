@@ -16,5 +16,20 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul> -->
+</ul>
 <first-comp></first-comp>
+below one is directive example component
+<app-directive-example></app-directive-example> -->
+<div class="container">
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
+      <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+      <li routerLinkActive="active"><a routerLink="/blog">Blog</a></li>
+    </ul>
+  </div>
+</div>
+<div class="">
+  placholder for content
+  <router-outlet></router-outlet>
+</div>
