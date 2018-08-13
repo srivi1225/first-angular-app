@@ -1,0 +1,45 @@
+<div class="container">
+  <form name="user" #frm="ngForm" (ngSubmit)="addUser(frm)" >
+    <div class="form-group">
+      <label for="">name:</label>
+      <input name="name" type="text" class="form-control" placeholder="Name" required pattern="[a-zA-Z][a-zA-z]+" ngModel #nameUser="ngModel">
+    </div>
+    <div *ngIf ="nameUser?.touched" class="alert alert-danger">
+      <div *ngIf="nameUser.errors?.required">
+        name is required
+      </div>
+      <div *ngIf="nameUser.errors?.pattern">
+        name is invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">Phone:</label>
+      <input name="phone" type="text" minlength="10" maxlength="10" class="form-control" patterrn="[0-9]*" placeholder="Phone Number" required ngModel #userPhone="ngModel">
+    </div>
+    <div *ngIf ="userPhone?.touched" class="alert alert-danger">
+      <div *ngIf="userPhone.errors?.required">
+        phone is required
+      </div>
+      <div [hidden]="!userPhone?.hasError('pattern', 'minlength')">
+        phone is invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="">email:</label>
+      <input name="email" type="text" class="form-control" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" placeholder="Email" required ngModel #userEmail="ngModel">
+    </div>
+    <div *ngIf ="userEmail?.touched" class="alert alert-danger">
+      <div *ngIf="userEmail.errors?.required">
+        email is required
+      </div>
+      <div *ngIf="userEmail.errors?.patern">
+        email is invalid
+      </div>
+    </div>
+    <button name="submit" class="btn btn-success" [disabled] = "frm.invalid">Submit</button>
+    </form>
+  </div>
+{{frm.value|json}}
+<ul class="list-group">
+  <li *ngFor= "let user of userList" class="list-group-item">{{user.name}}</li>
+</ul>
