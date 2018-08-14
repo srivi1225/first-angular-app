@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router' //imported to support routing
 
 import { AppComponent } from './app.component';
@@ -11,7 +11,8 @@ import { AppBoldDirective } from './app-bold.directive';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
-import { TemplateDrivenComponent } from './template-driven/template-driven.component'
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component'
 
 //these changes are required for routing
 const ROUTES:Routes = [
@@ -30,11 +31,13 @@ const ROUTES:Routes = [
     HomeComponent,
     AboutComponent,
     BlogComponent,
-    TemplateDrivenComponent
+    TemplateDrivenComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES) //this has to be added for routing
   ],
   providers: [],
