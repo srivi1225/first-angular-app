@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
-import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component'
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ListServiceComponent } from './list-service/list-service.component'
 
 //these changes are required for routing
 const ROUTES:Routes = [
@@ -32,7 +33,8 @@ const ROUTES:Routes = [
     AboutComponent,
     BlogComponent,
     TemplateDrivenComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ListServiceComponent
   ],
   imports: [
     BrowserModule,

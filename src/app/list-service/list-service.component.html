@@ -1,0 +1,14 @@
+<div class="container">
+  <form #frm="ngForm" (ngSubmit)="addItem(frm)">
+    <div class="input-group">
+      <span class="input-group-addon">New Item</span>
+      <input type="text" name="itemName" class="form-control" ngModel>
+      <button type="submit" name="submit" class="btn btn-primary">Add Item</button>
+    </div>
+  </form>
+  </div>
+  {{frm.value.itemName|json}}
+<button type="button" (click)="getOrderedItems()" class="btn btn-success">show items</button>
+  <ul class="list-group">
+    <li *ngFor= "let item of ordereditems" class="list-group-item">{{item}}</li>
+  </ul>
